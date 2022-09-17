@@ -1,0 +1,10 @@
+export default {
+    heading: " أقوى عروض مراكز التجميل في سوريا",
+    heading_sub: " أقوى عروض مراكز التجميل في سوريا",
+    begin_button :" ... ابدأ",
+    offers:"العروض",
+    clinic:"العيادات",
+    favorite:"المفضلة",
+    learn_more:"معرفة المزيد",
+
+}
