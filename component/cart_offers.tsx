@@ -1,11 +1,30 @@
-import {Badge, Box, Button, Flex, Image, Spacer, Stack, Text} from "@chakra-ui/react";
+import {Badge, Box, Flex, IconButton, Image, Spacer, Stack, Text,Icon} from "@chakra-ui/react";
 import React, {useState} from "react";
-import {FormattedMessage} from "react-intl";
 import {Rating} from "primereact/rating";
+import  AiOutlineHeart  from 'react-icons';
+import  FcLike  from "react-icons/fc";
+import {Button} from "primereact/button";
+import {useRecoilState} from "recoil";
+import {myOfferState} from "../atoms/offersAtom";
 
+const [offerState, setOfferState] = useRecoilState(myOfferState);
 
 export function Cart_offers({textHeading, motoHeading}) {
-    const [value, setValue] = useState(null);
+    let onFavoritePressed = () => {
+        setOfferState({
+            ...offerState,
+            Favorite: true
+
+        });
+    }
+let onRatePressed = (e) => {
+        setOfferState({
+            ...offerState,
+            Rate: e.value
+
+        });
+    }
+
     return (
         <Box w="300px" rounded="20px"
              overflow="hidden" bg={'brand.primary'} mt={10}>
@@ -13,6 +32,20 @@ export function Cart_offers({textHeading, motoHeading}) {
                        "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2019_20/1435573/overdoing-skincare-today-main-190509.jpg"
                    alt="Card Image" boxSize="300px">
             </Image>
+            {/*<IconButton*/}
+            {/*    variant='outline'*/}
+            {/*    // colorScheme='teal'*/}
+            {/*    aria-label='Call Sage'*/}
+            {/*    fontSize='20px'*/}
+            {/*    icon={<Icon as={FcLike} />}*/}
+            {/*   className={'chakra-icon css-1i1i0ua'}*/}
+            {/*/>*/}
+
+
+            <Button onClick={() =>onFavoritePressed()} className={offerState.Favorite === true
+                ? "p-button p-component p-button-rounded p-button-danger p-button-icon-only pi-heart"
+                : "p-button-icon p-c pi pi-heart p-button-icon-only p-button-rounded p-button p-component  p-button-help p-button-text p-button-danger"
+            }  />
             <Box p={5}>
                 <Stack align="center">
                     <Badge variant="solid" colorScheme='brand.darkgray'
@@ -32,18 +65,16 @@ export function Cart_offers({textHeading, motoHeading}) {
                     </Text>
                     <Spacer/>
 
-                    <Rating value={value} onIcon="pi pi-circle-fill" offIcon="pi-circle" onChange={(e) => setValue(e.value)} />
-
-                    <Rating value={value} onChange={(e) => setValue(e.value)} cancel={false} color={'brand.darkgray'} />
+                    <Rating value={offerState.Rate} onChange={(e) =>onRatePressed } cancel={false} color={'brand.darkgray'} />
                     <Spacer/>
                 </Stack>
                 <Flex>
                     <Spacer/>
-                    <Button variant="primary"
-                            colorScheme="green" size="m">
-                        <FormattedMessage id={"learn_more"}/>
+                    {/*<Button variant="primary"*/}
+                    {/*        colorScheme="green" size="m">*/}
+                    {/*    <FormattedMessage id={"learn_more"}/>*/}
 
-                    </Button>
+                    {/*</Button>*/}
                 </Flex>
             </Box>
         </Box>

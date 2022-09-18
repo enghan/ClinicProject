@@ -6,7 +6,7 @@ import ar from "../constant/i18n/ar";
 import en from "../constant/i18n/en";
 import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
-import {Head} from "next/head";
+import Head from "next/head";
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
