@@ -22,9 +22,9 @@ export default function Home({dir}) {
                 </TabList>
                 <TabPanels>
 
-                    <TabPanel key={1}><Offers></Offers> </TabPanel>
-                    <TabPanel key={1}><Clinics></Clinics> </TabPanel>
-                    <TabPanel key={1}><Offers></Offers> </TabPanel>
+                    <TabPanel key={1}><Offers dir={dir}></Offers> </TabPanel>
+                    <TabPanel key={1}><Clinics dir={dir}></Clinics> </TabPanel>
+                    <TabPanel key={1}><Offers dir={dir}></Offers> </TabPanel>
 
                 </TabPanels>
             </Tabs></Stack>

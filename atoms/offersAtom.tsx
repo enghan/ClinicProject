@@ -4,6 +4,7 @@ export const myOfferState = atom({
     key: 'myOfferState',
     default: {
         Favorite: false,
-        Rate:0
+        Rate:0,
+        id:''
     },
 });
