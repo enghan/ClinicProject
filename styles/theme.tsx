@@ -62,7 +62,8 @@ const theme = extendTheme({
             hoverPrimary: "#cb9ca1",
             hoverGray: "#262626",
             lightgray: "#b3b3b3",
-            darkgray: "#262626"
+            darkgray: "#262626",
+            textGray:"#848984",
         },
     },
     components: {
@@ -81,7 +82,8 @@ const theme = extendTheme({
                 primary: {
                     color: 'brand.darkgray',
                     bg: 'brand.primary',
-                    _hover:{bg: 'brand.darkgray', color: 'brand.gray', fontSize:16},
+                    h:'35px',
+                    _hover:{bg: 'brand.hoverPrimary', color: 'brand.darkgray', fontSize:16},
                 },
                 secondary: {
                     width: '80px',

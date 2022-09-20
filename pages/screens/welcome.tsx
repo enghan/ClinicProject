@@ -1,9 +1,16 @@
 import {Box, Button, Center, HStack} from '@chakra-ui/react';
 import Link from "next/link";
 import {FormattedMessage} from "react-intl";
+import getRequest from "../api/axios";
+import {HOME_URL} from "../../constant/data";
 
-function runApp() {
-    console.log("Button Clicked");
+let runApp = (e) => {
+
+        e.preventDefault();
+
+            const response = getRequest({HOME_URL});
+            console.log(response);
+     console.log('ddddddddddd'+{response})
 
 
 }

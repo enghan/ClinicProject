@@ -6,6 +6,7 @@ export default {
     clinic:"Clinic",
     favorite:"Favorite",
     learn_more:"Learn More",
+    detail:"Details"
 
 
 }

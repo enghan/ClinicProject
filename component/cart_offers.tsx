@@ -1,30 +1,38 @@
 import {
     Badge,
     Box,
+    Button, Container,
     Flex,
+    HStack,
     IconButton,
     Image,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
     Spacer,
     Stack,
     Text,
-    Button,
-    ModalOverlay,
-    Modal,
-    ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure, Container
+    useDisclosure
 } from "@chakra-ui/react";
-import React, {useState} from "react";
+import React from "react";
 import {Rating} from "primereact/rating";
-import  {FcLike,FcLikePlaceholder}  from "react-icons/fc";
-import { IoHeartOutline } from "react-icons/io5";
+import {FcLike} from "react-icons/fc";
+import {IoHeartOutline} from "react-icons/io5";
 import {useRecoilState} from "recoil";
 import {myOfferState} from "../atoms/offersAtom";
 import {FormattedMessage} from "react-intl";
 import OfferDetail from "../pages/screens/offerDetail";
+import Link from "next/link";
 
 
-export function Cart_offers({dir,id, image,title,price,description,ratingCount,ratingRate}) {
+export function Cart_offers({dir, id, image, title, price, description, ratingCount, ratingRate}) {
     const [offerState, setOfferState] = useRecoilState(myOfferState);
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const {isOpen, onOpen, onClose} = useDisclosure()
+
     function resetModal() {
         debugger
         setOfferState({
@@ -37,18 +45,19 @@ export function Cart_offers({dir,id, image,title,price,description,ratingCount,r
             id: id,
         })
     }
+
     let onFavoritePressed = (e) => {
-        offerState.Favorite==false? setOfferState({
+        offerState.Favorite == false ? setOfferState({
             ...offerState,
             Favorite: true
 
-        }):setOfferState({
+        }) : setOfferState({
             ...offerState,
             Favorite: false
 
         });
     }
-let onRatePressed = (e) => {
+    let onRatePressed = (e) => {
         debugger
         setOfferState({
             ...offerState,
@@ -60,30 +69,30 @@ let onRatePressed = (e) => {
     return (
         <Box w="300px" rounded="20px" dir={dir}
              overflow="hidden" bg={'brand.primary'} mt={10}>
-            <Image src= {image}     alt="Card Image" boxSize="300px">
+            <Image src={image} alt="Card Image" boxSize="300px">
             </Image>
 
             <IconButton
-                variant='outline'
-                colorScheme='brand.gray'
+                colorScheme='brand.darkgray'
                 aria-label='Call Sage'
-                fontSize='20px'
-                bg={'color.gray'}
-               onClick={onFavoritePressed}
-                icon={offerState.Favorite===true ?<FcLike />:<IoHeartOutline />}
+                fontSize='32px'
+                bg={'color.darkgray'}
+                onClick={onFavoritePressed}
+                pt={'20px'}
+                icon={offerState.Favorite === true ? <FcLike/> : <IoHeartOutline/>}
             />
 
 
             <Box p={5}>
                 <Stack align="center">
-                    <Badge variant="solid" colorScheme='brand.darkgray'
+                    <Badge variant='subtle' colorScheme='purple'
                            rounded="full" px={2}>
                         Active
                     </Badge>
                 </Stack>
                 <Spacer/>
-                <Stack align="center" >
-                    <Text as="h2" textOverflow={'ellipsis'}  fontWeight="normal" my={2}>
+                <Stack align="center">
+                    <Text as="h2" textOverflow={'ellipsis'} fontWeight="normal" my={2}>
                         {title}
                     </Text>
                     <Spacer/>
@@ -91,36 +100,46 @@ let onRatePressed = (e) => {
                         {price}$
                     </Text>
                     <Spacer/>
-                     {/*<Rating value={offerState.Rate} onChange={onRatePressed } cancel={false} color={'brand.darkgray'} />*/}
-                    <Rating value={ratingRate}  cancel={false} color={'#852147'}  />
+                    {/*<Rating value={offerState.Rate} onChange={onRatePressed } cancel={false} color={'brand.darkgray'} />*/}
+                    <Rating value={ratingRate} cancel={false} color={'#852147'}/>
                     <Spacer/>
 
                 </Stack>
                 <Flex>
                     <Spacer/>
-                    <Button variant="primary"
+                    <Button variant="primary" pt={'12px'}
                             colorScheme="green" size="m"
-                    onClick={resetModal}>
+                            onClick={resetModal}>
                         <FormattedMessage id={"learn_more"}/>
 
                     </Button>
 
                     <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
-                        <ModalOverlay />
+                        <ModalOverlay/>
                         <ModalContent>
-                            <ModalHeader>Create your account</ModalHeader>
-                            <ModalCloseButton />
+                            <ModalHeader> <HStack spacing='50%'>
+                                <Box><FormattedMessage id={"detail"}/></Box>
+                                <Box>
+                                    <Link color='brand.primary !important' href={'../pages/screens/Clinics'}>
+                                        linksdddd
+                                    </Link>
+                                </Box>
+
+
+                            </HStack></ModalHeader>
+                            <ModalCloseButton/>
                             <ModalBody pb={6}>
-                                <OfferDetail dir={dir} id={offerState.id} />
+                                <OfferDetail dir={dir} id={offerState.id}/>
                                 {/*<Lorem count={2} />*/}
 
                             </ModalBody>
 
                             <ModalFooter>
-                                <Button >
+                                <Button variant={'primary'}>
                                     Save
                                 </Button>
-                                <Button onClick={onClose}>Cancel</Button>
+                          <Container width={'50%'}></Container>
+                                <Button variant={'primary'} onClick={onClose}>Cancel</Button>
                             </ModalFooter>
                         </ModalContent>
                     </Modal>

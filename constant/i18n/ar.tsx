@@ -6,5 +6,6 @@ export default {
     clinic:"العيادات",
     favorite:"المفضلة",
     learn_more:"معرفة المزيد",
+    detail:"التفاصيل"
 
 }
