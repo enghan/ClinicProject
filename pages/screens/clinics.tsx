@@ -37,7 +37,7 @@ export default function Clinics({dir}) {
                     <InputRightElement children={<Search2Icon color={"brand.gray"}/>}/>
                 </InputGroup>
             </Center>
-            <Flex>
+
 
                 <SimpleGrid columns={3} spacingX='40px' dir={dir}>
                     {offers.map(offer => (
@@ -49,7 +49,6 @@ export default function Clinics({dir}) {
 
                 </SimpleGrid>
 
-            </Flex>
         </Stack>
 
 
