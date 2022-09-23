@@ -27,10 +27,10 @@ export default function OfferDetail({dir, id}) {
                     {'title'}
 
                 </Text> <Text fontWeight="bold" textColor={'brand.textGray'}>
-                " wwwwuuuuuuuuuuuuuuu color='brand.primary' href={'../pages/screens/Clinics'}> color='brand.primary'
-                href={'../pages/screens/Clinics'}> color='brand.primary' href={'../pages/screens/Clinics'}>
-                color='brand.primary' href={'../pages/screens/Clinics'}> color='brand.primary'
-                href={'../pages/screens/Clinics'}> color='brand.primary' href={'../pages/screens/Clinics'}>uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuubbbbbbbbbbbbbbbbbbbbbbbbpppppppppppppp"
+                wwwwuuuuuuuuuuuuuuu color='brand.primary' href={'../pages/screens/Clinics'} color='brand.primary'
+                href={'../pages/screens/Clinics'} color='brand.primary' href={'../pages/screens/Clinics'}
+                color='brand.primary' href={'../pages/screens/Clinics'} color='brand.primary'
+                href={'../pages/screens/Clinics'} color='brand.primary' href={'../pages/screens/Clinics'}uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuubbbbbbbbbbbbbbbbbbbbbbbbpppppppppppppp
             </Text>
             </Box>
         </Stack>

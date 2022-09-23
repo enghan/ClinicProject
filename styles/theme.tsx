@@ -27,7 +27,7 @@ const theme = extendTheme({
     },
         styles: {
             h1: {
-                fontSize: 40,
+                fontSize: 600,
                 fontFamily: 'heading',
                 fontWeight: 'heading',
                 color: 'brand.primary',
@@ -64,6 +64,7 @@ const theme = extendTheme({
             lightgray: "#b3b3b3",
             darkgray: "#262626",
             textGray:"#848984",
+            light:"#eeeeee",
         },
     },
     components: {
@@ -86,12 +87,12 @@ const theme = extendTheme({
                     _hover:{bg: 'brand.hoverPrimary', color: 'brand.darkgray', fontSize:16},
                 },
                 secondary: {
-                    width: '80px',
+                    width: '100px',
                     color: 'brand.lightgray',
                     bg: 'brand.secondary',
                     fontWeight: 'bold',
                     fontSize:21,
-                    _hover:{bg: 'brand.hoverPrimary', color: 'brand.darkgray', fontSize:16,textDecoration:'none'},
+                    _hover:{bg: 'brand.hoverPrimary', color: 'brand.darkgray', fontSize:18 ,textDecoration:'none', width:'200px',height:'50px',}
 
                 },
             },

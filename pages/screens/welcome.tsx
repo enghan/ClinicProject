@@ -3,14 +3,16 @@ import Link from "next/link";
 import {FormattedMessage} from "react-intl";
 import getRequest from "../api/axios";
 import {HOME_URL} from "../../constant/data";
+import Router from "next/router";
 
 let runApp = (e) => {
 
         e.preventDefault();
 
-            const response = getRequest({HOME_URL});
+    const response = getRequest(HOME_URL);
             console.log(response);
      console.log('ddddddddddd'+{response})
+    Router.push("./screens/home");
 
 
 }
@@ -32,14 +34,14 @@ export default function Welcome({dir}) {
             </Center>
             <Center>
 
-                <Link href="./screens/home">
+                {/*<Link href="./screens/home">*/}
                     <Button
                         variant='baseStyle'
                         onClick={runApp}
                     >
                         <FormattedMessage id="begin_button"/>
                     </Button>
-                </Link>
+                {/*</Link>*/}
 
             </Center>
             <Center pt={'50px'}>

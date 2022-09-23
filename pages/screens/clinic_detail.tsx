@@ -1,22 +1,33 @@
-import {Box, Heading, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text} from '@chakra-ui/react'
+import {Box, Center, VStack,Text} from '@chakra-ui/react'
 import {tabs} from '../../constant/data';
-import {FormattedMessage} from "react-intl";
+import {Carousel} from "primereact/carousel";
+import React from "react";
 
 
-export default function offerClinic({dir}) {
-    const title = "Hello guys I'm sending props!! 👑"
-    const content = "ohh another prop this is good!!"
+export default function clinic_detail({dir}) {
     return (
-        <Stack dir={dir}>
-            {/*{<heading textHeading={title}  motoHeading={content} />}*/}
-            <Box maxW='32rem'>
-                <Heading mb={4}>{title}</Heading>
-                <Text fontSize='xl'>
-                    <FormattedMessage id="heading"/>
-                </Text>
-
+        <VStack dir={dir}>
+            <Center>
+                <Box>
+                <Carousel value={tabs} itemTemplate={itemTemplate} orientation="horizontal"
+                          header={<h1>Header</h1>}></Carousel>
             </Box>
-        </Stack>
+
+            </Center>
+            <Text color='brand.darkgray' fontSize='l' textAlign='center' w={'calc(64vh)'}>
+                Welcome to Lumière Cosmetic Clinic, Sydney’s premiere medical-grade cosmetic surgical clinic that puts a significant focus on minimally invasive procedures to help revitalise and refresh your look.
+            </Text>
+
+        </VStack>
+
+
+    );
+}
+
+const itemTemplate = (offers) => {
+    return (
+        <Box h={'calc(36vh)'} w={'calc(64vh)'}> <img src={`images/product/${offers.image}`} alt={offers.name}
+                                                     className="product-image"/></Box>
 
 
     );

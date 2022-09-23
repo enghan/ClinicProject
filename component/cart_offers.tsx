@@ -33,7 +33,7 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
     const [offerState, setOfferState] = useRecoilState(myOfferState);
     const {isOpen, onOpen, onClose} = useDisclosure()
 
-    function resetModal() {
+    let resetModal = (e) => {
         debugger
         setOfferState({
             ...offerState,
@@ -69,7 +69,7 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
     return (
         <Box w="300px" rounded="20px" dir={dir}
              overflow="hidden" bg={'brand.primary'} mt={10}>
-            <Image src={image} alt="Card Image" boxSize="300px">
+            <Image src={image} alt="Card Image" boxSize="300px" borderRadius={"sm"}   objectFit={"cover"} _hover={{ transform: "scale(1.03)", }} transition={"0.2s ease-in-out"}>
             </Image>
 
             <IconButton

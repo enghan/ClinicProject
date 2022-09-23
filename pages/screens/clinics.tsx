@@ -1,22 +1,56 @@
-import {Box, Heading, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text} from '@chakra-ui/react'
-import {tabs} from '../../constant/data';
+import {
+    Box,
+    Center,
+    Flex,
+    Input,
+    InputGroup,
+    InputLeftElement,
+    InputRightElement,
+    SimpleGrid,
+    Spacer,
+    Stack,
+    Text
+} from '@chakra-ui/react'
+import {Search2Icon} from "@chakra-ui/icons";
+import {offers} from '../../constant/data';
+import {Cart_clinics} from "../../component/cart_clinics";
 import {FormattedMessage} from "react-intl";
+import React from "react";
 
 
 export default function Clinics({dir}) {
-    const title = "Hello guys I'm sending props!! 👑"
-    const content = "ohh another prop this is good!!"
+    function onTextChanged(e) {
+        console.log(e.target.value);
+
+    }
+
     return (
         <Stack dir={dir}>
-            {/*{<heading textHeading={title}  motoHeading={content} />}*/}
-            <Box maxW='32rem'>
-                <Heading mb={4}>{title}</Heading>
-                <Text fontSize='xl'>
-                    <FormattedMessage id="heading"/>
-                </Text>
+            <Center h='calc(8vh)' w='calc(50%)'>
+                <InputGroup w='calc(80vh)'>
+                    <InputLeftElement
+                        pointerEvents='none'
+                        color={"brand.darkgray"}
+                        fontSize='1.2em'
+                    />
+                    <Input placeholder='search' defaultValue={'search'} onChange={onTextChanged}/>
+                    <InputRightElement children={<Search2Icon color={"brand.gray"}/>}/>
+                </InputGroup>
+            </Center>
+            <Flex>
 
-            </Box>
-           </Stack>
+                <SimpleGrid columns={3} spacingX='40px' dir={dir}>
+                    {offers.map(offer => (
+                        <Cart_clinics dir={dir} id={offer.id} image={offer.image} description={offer.description}
+                                      price={offer.price} title={offer.title} ratingCount={offer.rating.count}
+                                      ratingRate={offer.rating.rate}></Cart_clinics>
+                    ))}
+
+
+                </SimpleGrid>
+
+            </Flex>
+        </Stack>
 
 
     );

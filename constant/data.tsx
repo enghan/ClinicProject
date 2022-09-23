@@ -1,4 +1,4 @@
-export  const HOME_URL='http://localhost:1337/api/restaurants';
+export  const HOME_URL='https://fakestoreapi.com/products';
 export const  tabs = ['offers', 'clinic', 'favorite']
 export const  offers = [
     {

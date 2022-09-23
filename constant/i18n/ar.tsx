@@ -6,6 +6,9 @@ export default {
     clinic:"العيادات",
     favorite:"المفضلة",
     learn_more:"معرفة المزيد",
-    detail:"التفاصيل"
+    detail:"التفاصيل",
+    our_service:"خدماتنا",
+    our_offers:"عروضنا",
+
 
 }
