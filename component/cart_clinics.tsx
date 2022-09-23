@@ -64,14 +64,13 @@ export function Cart_clinics({dir, id, image, title, price, description, ratingC
                 </Stack></Center>
 
             </Box>
-
-            <Button variant="secondary"
-                    pt={'20px'}
-                    size="m"
-                    onClick={resetModal}>
-                <FormattedMessage id={"learn_more"}/>
-
+            <Button
+                variant="outline"
+                onClick={resetModal}
+            >
+                <FormattedMessage id={"learn_more"}></FormattedMessage>
             </Button>
+
 
             <Spacer/>
         </VStack>

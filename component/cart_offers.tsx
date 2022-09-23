@@ -1,11 +1,13 @@
 import {
-    Badge,
     Box,
-    Button, Container,
-    Flex,
+    Button,
+    Center,
+    Container, Flex,
     HStack,
     IconButton,
-    Image,
+    List,
+    ListIcon,
+    ListItem,
     Modal,
     ModalBody,
     ModalCloseButton,
@@ -13,20 +15,21 @@ import {
     ModalFooter,
     ModalHeader,
     ModalOverlay,
-    Spacer,
     Stack,
     Text,
+    useColorModeValue,
     useDisclosure
 } from "@chakra-ui/react";
 import React from "react";
-import {Rating} from "primereact/rating";
 import {FcLike} from "react-icons/fc";
 import {IoHeartOutline} from "react-icons/io5";
 import {useRecoilState} from "recoil";
 import {myOfferState} from "../atoms/offersAtom";
 import {FormattedMessage} from "react-intl";
-import OfferDetail from "../pages/screens/offerDetail";
+import {CheckIcon} from "@chakra-ui/icons";
 import Link from "next/link";
+import OfferDetail from "../pages/screens/offerDetail";
+import Rating from "./rating";
 
 
 export function Cart_offers({dir, id, image, title, price, description, ratingCount, ratingRate}) {
@@ -67,86 +70,171 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
     }
 
     return (
-        <Box w="300px" rounded="20px" dir={dir}
-             overflow="hidden" bg={'brand.primary'} mt={10}>
-            <Image src={image} alt="Card Image" boxSize="300px" borderRadius={"sm"}   objectFit={"cover"} _hover={{ transform: "scale(1.03)", }} transition={"0.2s ease-in-out"}>
-            </Image>
+        // <Box w="300px" rounded="20px" dir={dir}
+        //      overflow="hidden" bg={'brand.primary'} mt={10}>
+        //     <Image src={image} alt="Card Image" boxSize="300px" borderRadius={"sm"}   objectFit={"cover"} _hover={{ transform: "scale(1.03)", }} transition={"0.2s ease-in-out"}>
+        //     </Image>
+        //
+        //     <IconButton
+        //         colorScheme='brand.darkgray'
+        //         aria-label='Call Sage'
+        //         fontSize='32px'
+        //         bg={'color.darkgray'}
+        //         onClick={onFavoritePressed}
+        //         pt={'20px'}
+        //         icon={offerState.Favorite === true ? <FcLike/> : <IoHeartOutline/>}
+        //     />
+        //
+        //
+        //     <Box p={5}>
+        //         <Stack align="center">
+        //             <Badge variant='subtle' colorScheme='purple'
+        //                    rounded="full" px={2}>
+        //                 Active
+        //             </Badge>
+        //         </Stack>
+        //         <Spacer/>
+        //         <Stack align="center">
+        //             <Text as="h2" textOverflow={'ellipsis'} fontWeight="normal" my={2}>
+        //                 {title}
+        //             </Text>
+        //             <Spacer/>
+        //             <Text fontWeight="bold">
+        //                 {price}$
+        //             </Text>
+        //             <Spacer/>
+        //             {/*<Rating value={offerState.Rate} onChange={onRatePressed } cancel={false} color={'brand.darkgray'} />*/}
+        //             <Rating value={ratingRate} cancel={false} color={'#852147'}/>
+        //             <Spacer/>
+        //
+        //         </Stack>
+        //         <Flex>
+        //             <Spacer/>
+        //             <Button variant="primary" pt={'12px'}
+        //                     colorScheme="green" size="m"
+        //                     onClick={resetModal}>
+        //                 <FormattedMessage id={"learn_more"}/>
+        //
+        //             </Button>
+        //
 
-            <IconButton
-                colorScheme='brand.darkgray'
-                aria-label='Call Sage'
-                fontSize='32px'
-                bg={'color.darkgray'}
-                onClick={onFavoritePressed}
-                pt={'20px'}
-                icon={offerState.Favorite === true ? <FcLike/> : <IoHeartOutline/>}
-            />
-
-
-            <Box p={5}>
-                <Stack align="center">
-                    <Badge variant='subtle' colorScheme='purple'
-                           rounded="full" px={2}>
-                        Active
-                    </Badge>
-                </Stack>
-                <Spacer/>
-                <Stack align="center">
-                    <Text as="h2" textOverflow={'ellipsis'} fontWeight="normal" my={2}>
+        //         </Flex>
+        //     </Box>
+        // </Box>
+        <Center dir={dir} py={6}>
+            <Box
+                maxW={'330px'}
+                w={'full'}
+                bg={useColorModeValue('white', 'gray.800')}
+                boxShadow={'2xl'}
+                rounded={'md'}
+                overflow={'hidden'}>
+                <Stack
+                    textAlign={'center'}
+                    p={6}
+                    color={useColorModeValue('gray.800', 'white')}
+                    align={'center'}>
+                    <Text
+                        fontSize={'sm'}
+                        fontWeight={500}
+                        bg={useColorModeValue('green.50', 'green.900')}
+                        p={2}
+                        px={3}
+                        color={'green.500'}
+                        rounded={'full'}>
                         {title}
                     </Text>
-                    <Spacer/>
-                    <Text fontWeight="bold">
-                        {price}$
-                    </Text>
-                    <Spacer/>
-                    {/*<Rating value={offerState.Rate} onChange={onRatePressed } cancel={false} color={'brand.darkgray'} />*/}
-                    <Rating value={ratingRate} cancel={false} color={'#852147'}/>
-                    <Spacer/>
+                    <Stack direction={'row'} align={'center'} justify={'center'}>
+                        <Text fontSize={'3xl'}>$</Text>
+                        <Text fontSize={'6xl'} fontWeight={800}>
+                            {price}
+                        </Text>
+                        <Text color={'gray.500'}>/month</Text>
+                    </Stack>
+                    <IconButton
+                        colorScheme='brand.darkgray'
+                        aria-label='Call Sage'
+                        fontSize='32px'
+                        color={'brand.darkgray'}
+                        onClick={onFavoritePressed}
+                        pt={'20px'}
+                        icon={offerState.Favorite === true ? <FcLike/> : <IoHeartOutline/>}
+                    />
 
                 </Stack>
-                <Flex>
-                    <Spacer/>
-                    <Button variant="primary" pt={'12px'}
-                            colorScheme="green" size="m"
-                            onClick={resetModal}>
-                        <FormattedMessage id={"learn_more"}/>
-
-                    </Button>
-
-                    <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
-                        <ModalOverlay/>
-                        <ModalContent>
-                            <ModalHeader> <HStack spacing='50%'>
-                                <Box><FormattedMessage id={"detail"}/></Box>
-                                <Box>
-                                    <Link color='brand.primary !important' href={'../pages/screens/Clinics'}>
-                                        linksdddd
-                                    </Link>
-                                </Box>
-
-
-                            </HStack></ModalHeader>
-                            <ModalCloseButton/>
-                            <ModalBody pb={6}>
-                                <OfferDetail dir={dir} id={offerState.id}/>
-                                {/*<Lorem count={2} />*/}
-
-                            </ModalBody>
-
-                            <ModalFooter>
-                                <Button variant={'primary'}>
-                                    Save
-                                </Button>
-                          <Container width={'50%'}></Container>
-                                <Button variant={'primary'} onClick={onClose}>Cancel</Button>
-                            </ModalFooter>
-                        </ModalContent>
-                    </Modal>
+                <Flex  px={6} justifyContent="space-between" alignContent="center">
+                    <Rating rating={ratingRate} numReviews={ratingCount} />
                 </Flex>
-            </Box>
-        </Box>
+                <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
+                    <List spacing={3}>
+                        <ListItem>
+                            <ListIcon as={CheckIcon} color="green.400"/>
+                            5.000 page views
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={CheckIcon} color="green.400"/>
+                            50 automation executions
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={CheckIcon} color="green.400"/>
+                            50 identified users
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={CheckIcon} color="green.400"/>
+                            All features
+                        </ListItem>
+                    </List>
 
+                    <Button
+                        mt={10}
+                        w={'full'}
+                        bg={'brand.hoverPrimary'}
+                        color={'white'}
+                        rounded={'xl'}
+                        boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                        onClick={resetModal}
+                        _hover={{
+                            bg: 'brand.primary',
+                            color: 'brand.darkgray'
+                        }}
+                        _focus={{
+                            bg: 'brand.primary',
+                            color: 'brand.darkgray'
+                        }}>
+                        <FormattedMessage id={"learn_more"}></FormattedMessage>
+                    </Button>
+                </Box>
+            </Box>
+            <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay/>
+                <ModalContent>
+                    <ModalHeader> <HStack spacing='50%'>
+                        <Box><FormattedMessage id={"detail"}/></Box>
+                        <Box>
+                            <Link color='brand.primary !important' href={'../pages/screens/Clinics'}>
+                                linksdddd
+                            </Link>
+                        </Box>
+
+
+                    </HStack></ModalHeader>
+                    <ModalCloseButton/>
+                    <ModalBody pb={6}>
+                        <OfferDetail dir={dir} id={offerState.id}/>
+                        {/*<Lorem count={2} />*/}
+
+                    </ModalBody>
+
+                    <ModalFooter>
+                        <Button variant={'primary'}>
+                            Save
+                        </Button>
+                        <Container width={'50%'}></Container>
+                        <Button variant={'primary'} onClick={onClose}>Cancel</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+        </Center>
 
     )
 }

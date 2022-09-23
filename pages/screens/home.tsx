@@ -4,14 +4,16 @@ import {FormattedMessage} from "react-intl";
 import Offers from "./offers";
 import Clinics from "./clinics";
 import { Header } from '../../component/hrader';
+import Simple from "../../component/navBar";
+
 
 
 export default function Home({dir}) {
     return (
-        <Stack dir={dir}>
+        <Stack bgGradient={'linear(to-r, blackAlpha.600, transparent)'} dir={dir}>
             <Header textHeading={"heading"}  motoHeading={"heading_sub"} />
-
-            <Tabs p={'20px'} isFitted variant="unStyled">
+            {/*<Simple></Simple>*/}
+            <Tabs  isFitted variant="soft-rounded">
                 <TabList>
                     {tabs.map(tab => (
                         <Tab mb={null}
@@ -27,8 +29,9 @@ export default function Home({dir}) {
                     <TabPanel key={1}><Offers dir={dir}></Offers> </TabPanel>
 
                 </TabPanels>
-            </Tabs></Stack>
+            </Tabs>
 
 
+        </Stack>
     );
 }

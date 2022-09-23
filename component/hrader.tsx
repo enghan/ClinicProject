@@ -19,33 +19,13 @@ export function Header({textHeading, motoHeading}) {
                 </Heading>
             </Flex>
 
-            <Box display={{ base: "block", md: "none" }}>
-                <HamburgerIcon />
-            </Box>
 
-            <Stack
-                direction={{ base: "column", md: "row" }}
-               // display={{ base: isOpen ? "block" : "none", md: "flex" }}
-                width={{ base: "full", md: "auto" }}
-                alignItems="center"
-                flexGrow={1}
-                mt={{ base: 4, md: 0 }}
-            >
-                <Text>Docs</Text>
-                <Text>Examples</Text>
-                <Text>Blog</Text>
-            </Stack>
 
             <Box
                // display={{ base: isOpen ? "block" : "none", md: "block" }}
                 mt={{ base: 4, md: 0 }}
             >
-                <Button
-                    variant="outline"
-                    _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-                >
-                    Create account
-                </Button>
+
             </Box>
             <Center> <Box maxW='32rem'>
                 <Heading pt={'20px'} pb={'20px'}> <FormattedMessage id={textHeading}/></Heading>
