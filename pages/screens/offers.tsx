@@ -26,8 +26,8 @@ export default function Offers({dir}) {
                     <Text fontSize='3xl' fontWeight={'bold'}> <FormattedMessage id={"our_offers"}/></Text>
                     <Spacer></Spacer>
                     {offers.map(offer => (
-                        <Text  _hover={{ Color: "brand.lightgray",fontSize:'xl' }}
-                               fontSize='l' p={'5px'} onClick={onSearchService}>{offer.category}  </Text>
+                        <Text   _hover={{ Color: "brand.lightgray",fontSize:'2xl' }}
+                               fontSize='xl' p={'5px'} onClick={onSearchService}>{offer.category}  </Text>
                     ))}
                 </Box>
             </Flex>

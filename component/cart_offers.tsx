@@ -186,21 +186,9 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
                     </List>
 
                     <Button
-                        mt={10}
-                        w={'full'}
-                        bg={'brand.hoverPrimary'}
-                        color={'white'}
-                        rounded={'xl'}
-                        boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                       variant={'secondary'}
                         onClick={resetModal}
-                        _hover={{
-                            bg: 'brand.primary',
-                            color: 'brand.darkgray'
-                        }}
-                        _focus={{
-                            bg: 'brand.primary',
-                            color: 'brand.darkgray'
-                        }}>
+                        >
                         <FormattedMessage id={"learn_more"}></FormattedMessage>
                     </Button>
                 </Box>
@@ -226,11 +214,11 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button variant={'primary'}>
+                        <Button variant={'secondary'}>
                             Save
                         </Button>
                         <Container width={'50%'}></Container>
-                        <Button variant={'primary'} onClick={onClose}>Cancel</Button>
+                        <Button variant={'secondary'} onClick={onClose}>Cancel</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

@@ -13,10 +13,11 @@ export default function Home({dir}) {
         <Stack bgGradient={'linear(to-r, blackAlpha.600, transparent)'} dir={dir}>
             <Header textHeading={"heading"}  motoHeading={"heading_sub"} />
             {/*<Simple></Simple>*/}
-            <Tabs  isFitted variant="soft-rounded">
+            <Tabs  isFitted variant="soft-rounded"    >
                 <TabList>
                     {tabs.map(tab => (
-                        <Tab mb={null}
+                        <Tab mb={null}fontSize={'2xl'} fontWeight={'bold'}  _hover={{transform: "scale(1.03)",}} transition={"0.2s ease-in-out"} color={'brand.darkgray'} _selected={{ fontSize:'2xl', color: 'white', bg: 'brand.hoverPrimary' }}
+
                              key={tab}>
                             <FormattedMessage id={tab}/>
                         </Tab>

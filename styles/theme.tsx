@@ -73,7 +73,7 @@ const theme = extendTheme({
                 fontWeight: 'bold',
                 textColor: 'brand.darkgray',
                 width: '300px',
-                bg: "brand.primary", rounded:'md',
+                bg: "brand.primary", rounded: 'md',
                 _hover: {bg: 'brand.hoverPrimary', color: 'brand.darkgray'},
 
 
@@ -85,58 +85,70 @@ const theme = extendTheme({
                     color: 'brand.darkgray',
                     bg: 'brand.primary',
                     h: '35px',
-                    rounded:'md',
-                    _hover: {bg: 'brand.hoverPrimary', color: 'white', fontSize: 16,   transform: 'translateY(-2px)',
-                        boxShadow: 'lg',},
+                    rounded: 'md',
+                    _hover: {
+                        bg: 'brand.hoverPrimary', color: 'white', fontSize: 16, transform: 'translateY(-2px)',
+                        boxShadow: 'lg',
+                    },
                 },
                 secondary: {
-                    width: '100px',
-                    color: 'brand.lightgray',
-                    bg: 'brand.secondary',
+
+                    rounded: 'xl',
+                    boxShadow: '0 5px 20px 0px rgb(72 187 120 / 43%)',
+                    mt: '10',
+                    w: 'full',
+                    color: 'white',
+                    bg: 'brand.hoverPrimary',
                     fontWeight: 'bold',
                     fontSize: 21,
-                    rounded:'md',
                     _hover: {
-                        bg: 'brand.hoverPrimary',
+                        bg: 'brand.primary',
                         color: 'brand.darkgray',
-                        fontSize: 18,
-                        textDecoration: 'none',
+                        transform: 'translateY(-2px)',
+                        boxShadow: 'lg',
+                    },
+                    _focus: {
+                        bg: 'brand.primary',
+                        color: 'brand.darkgray',
                         transform: 'translateY(-2px)',
                         boxShadow: 'lg',
                     }
 
                 }, outline: {
                     border: 'solid',
-                    borderColor:'brand.light',
-                    rounded:'md',
+                    borderColor: 'brand.light',
+                    rounded: 'md',
                     boxShadow:
                         '0px 1px 25px -5px rgb(66 153 225 / 28%), 0 10px 10px -5px rgb(66 153 225 / 3%)',
 
-                    _hover: {bg: 'brand.lightgray', borderColor: 'brand.darkgray',   transform: 'translateY(-2px)',
-                        boxShadow: 'lg',}
+                    _hover: {
+                        bg: 'brand.lightgray', borderColor: 'brand.darkgray', transform: 'translateY(-2px)',
+                        boxShadow: 'lg',
+                    }
 
                 },
             },
 
         },
-        Tabs: {
-            variants: {
-                unStyled: {
-
-                    margin: '20',
-                    bg: 'brand.primary',
-
-                    tab: {
-                        bg: 'brand.gray',
-                        _selected: {
-                            color: 'brand.darkGray',
-                            boxShadow: 'none',
-                            bg: 'brand.lightgray',
-                        },
-                    },
-                },
-            },
-        },
+//         Tabs: {
+//             variants: {
+//                 soft_rounded: {
+// bg:"whiteAlpha.300",
+//                        tab: {
+//                         bg: 'brand.gray',
+//                         fontSize:'2xl',
+//                         fontWeight:'bold',
+//                         _hover:{transform: "scale(1.03)",},
+//                         transition:"0.2s ease-in-out",
+//                         color:'brand.darkgray',
+//                         _selected: {
+//                             rounded:'2xl',
+//                             fontSize:'2xl', color: 'white', bg: 'brand.hoverPrimary'
+//                         },
+//                     },
+//                 },
+//             },
+//         },
         Heading: {p: '20px'},
         Select: {
             baseStyle: {

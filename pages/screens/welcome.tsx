@@ -24,8 +24,7 @@ export default function Welcome({dir}) {
         <Flex
             w={'full'}
             h={'100vh'}
-            backgroundImage={
-                '/Image/cover.jpg' }
+            backgroundImage={'/Image/cover.jpg' }
             backgroundSize={'cover'}
             backgroundPosition={'center center'}>
             <VStack

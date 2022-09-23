@@ -3,7 +3,6 @@ import React from "react";
 import {useRecoilState} from "recoil";
 import {myOfferState} from "../atoms/offersAtom";
 import {FormattedMessage} from "react-intl";
-import ClinicDetail from "../pages/screens/clinic_detail";
 import Router from "next/router";
 
 
@@ -48,9 +47,10 @@ export function Cart_clinics({dir, id, image, title, price, description, ratingC
 
     return (
         <VStack>
-            <Box w="300px" h={'calc(100%)'} rounded="10px" border={'solid'} borderWidth={'1px'} borderColor={'brand.lightgray'} dir={dir}
+            <Box w="300px" h={'calc(100%)'} rounded="10px" dir={dir}
                  overflow="hidden" mt={10}>
-                <Image src={image} alt="Card Image" boxSize="300px" borderRadius={"sm"}  objectFit={"cover"} _hover={{ transform: "scale(1.03)", }} transition={"0.2s ease-in-out"}>
+                <Image src={image} alt="Card Image" boxSize="300px" borderRadius={"sm"} objectFit={"cover"}
+                       _hover={{transform: "scale(1.03)",}} transition={"0.2s ease-in-out"}>
                 </Image>
                 <Center> <Stack align="center">
                     <Text p="10px" textOverflow={'ellipsis'} fontWeight="bold" my={2}>

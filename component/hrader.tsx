@@ -10,17 +10,9 @@ export function Header({textHeading, motoHeading}) {
             justify="space-between"
             wrap="wrap"
             padding={6}
-            bg="teal.500"
+            bg="brand.hoverPrimary"
             color="white"
         >
-            <Flex align="center" mr={5}>
-                <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-                    Chakra UI
-                </Heading>
-            </Flex>
-
-
-
             <Box
                // display={{ base: isOpen ? "block" : "none", md: "block" }}
                 mt={{ base: 4, md: 0 }}
