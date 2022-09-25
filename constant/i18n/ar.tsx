@@ -9,6 +9,8 @@ export default {
     detail:"التفاصيل",
     our_service:"خدماتنا",
     our_offers:"عروضنا",
-
+    S_P:"ل.س",
+    month:"/شهر",
+    review:"الآراء",
 
 }

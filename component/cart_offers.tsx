@@ -125,14 +125,14 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
             <Box
                 maxW={'330px'}
                 w={'full'}
-                bg={useColorModeValue('white', 'gray.800')}
+                bg={useColorModeValue('white', 'brand.darkgray')}
                 boxShadow={'2xl'}
                 rounded={'md'}
                 overflow={'hidden'}>
                 <Stack
                     textAlign={'center'}
                     p={6}
-                    color={useColorModeValue('gray.800', 'white')}
+                    color={useColorModeValue('brand.darkgray', 'white')}
                     align={'center'}>
                     <Text
                         fontSize={'sm'}
@@ -145,11 +145,11 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
                         {title}
                     </Text>
                     <Stack direction={'row'} align={'center'} justify={'center'}>
-                        <Text fontSize={'3xl'}>$</Text>
+                        <Text fontSize={'xl'}>  <FormattedMessage id={"S_P"}/></Text>
                         <Text fontSize={'6xl'} fontWeight={800}>
                             {price}
                         </Text>
-                        <Text color={'gray.500'}>/month</Text>
+
                     </Stack>
                     <IconButton
                         colorScheme='brand.darkgray'
@@ -162,10 +162,10 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
                     />
 
                 </Stack>
-                <Flex  px={6} justifyContent="space-between" alignContent="center">
+                <Flex pb={'10px'} px={6} justifyContent="space-between" alignContent="center">
                     <Rating rating={ratingRate} numReviews={ratingCount} />
                 </Flex>
-                <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
+                <Box bg={useColorModeValue('brand.light', 'brand.darkgray')} px={6} py={10}>
                     <List spacing={3}>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400"/>

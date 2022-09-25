@@ -1,5 +1,6 @@
 import {Box,HStack} from "@chakra-ui/react";
 import {BsStar, BsStarFill, BsStarHalf} from "react-icons/all";
+import {FormattedMessage} from "react-intl";
 
 interface RatingProps {
     rating: number;
@@ -16,8 +17,8 @@ export default  function Rating({ rating, numReviews }: RatingProps) {
                         return (
                             <BsStarFill
                                 key={i}
-                                style={{ marginLeft: '1' }}
-                                color={i < rating ? 'teal.500' : 'gray.300'}
+                                style={{ marginLeft: '3' }}
+                                color={i < rating ? 'brand.primary' : 'brand.darkgray'}
                             />
                         );
                     }
@@ -26,8 +27,8 @@ export default  function Rating({ rating, numReviews }: RatingProps) {
                     }
                     return <BsStar key={i} style={{ marginLeft: '1' }} />;
                 })}
-            <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                {numReviews} review{numReviews > 1 && 's'}
+            <Box as="span" ml="2" color="brand.textGray" fontSize="sm">
+                {numReviews} <FormattedMessage id={"review"}/>
             </Box>
         </HStack>
     );

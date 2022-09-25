@@ -9,6 +9,9 @@ export default {
     detail:"Details",
     our_service:"Our Service",
     our_offers:"Our Offers",
+    S_P:"S.P",
+    month:"/month",
+    review:"reviews",
 
 
 }

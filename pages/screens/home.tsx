@@ -3,8 +3,9 @@ import {tabs} from '../../constant/data';
 import {FormattedMessage} from "react-intl";
 import Offers from "./offers";
 import Clinics from "./clinics";
-import { Header } from '../../component/hrader';
+import { Header } from '../../component/header';
 import Simple from "../../component/navBar";
+import {FooterApp} from "../../component/Footer";
 
 
 
@@ -31,7 +32,7 @@ export default function Home({dir}) {
 
                 </TabPanels>
             </Tabs>
-
+<FooterApp></FooterApp>
 
         </Stack>
     );

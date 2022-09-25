@@ -65,6 +65,8 @@ const theme = extendTheme({
             darkgray: "#262626",
             textGray: "#848984",
             light: "#eeeeee",
+            Lightgreen:'green.50',
+            Darkgreen:'green.900',
         },
     },
     components: {
