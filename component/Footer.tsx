@@ -10,7 +10,7 @@ import {
     chakra,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+
 import AppStoreBadge from 'app-store-badge';
 import PlayStoreBadge from 'store-badge';
 
@@ -106,17 +106,17 @@ export  function FooterApp() {
                     justify={{ md: 'space-between' }}
                     align={{ md: 'center' }}>
                     <Text>© 2022 Chakra Templates. All rights reserved</Text>
-                    <Stack direction={'row'} spacing={6}>
-                        <SocialButton label={'Twitter'} href={'#'}>
-                            <FaTwitter />
-                        </SocialButton>
-                        <SocialButton label={'YouTube'} href={'#'}>
-                            <FaYoutube />
-                        </SocialButton>
-                        <SocialButton label={'Instagram'} href={'#'}>
-                            <FaInstagram />
-                        </SocialButton>
-                    </Stack>
+                    {/*<Stack direction={'row'} spacing={6}>*/}
+                    {/*    <SocialButton label={'Twitter'} href={'#'}>*/}
+                    {/*        <FaTwitter />*/}
+                    {/*    </SocialButton>*/}
+                    {/*    <SocialButton label={'YouTube'} href={'#'}>*/}
+                    {/*        <FaYoutube />*/}
+                    {/*    </SocialButton>*/}
+                    {/*    <SocialButton label={'Instagram'} href={'#'}>*/}
+                    {/*        <FaInstagram />*/}
+                    {/*    </SocialButton>*/}
+                    {/*</Stack>*/}
                 </Container>
             </Box>
         </Box>

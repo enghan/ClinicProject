@@ -167,17 +167,18 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
                 </Flex>
                 <Box bg={useColorModeValue('brand.light', 'brand.darkgray')} px={6} py={10}>
                     <List spacing={3}>
+
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400"/>
-                            5.000 page views
+                           10_10-2022 open /15_10_2022 colse
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400"/>
-                            50 automation executions
+                            clinic name
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400"/>
-                            50 identified users
+                           to inquire :0999999999
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400"/>
