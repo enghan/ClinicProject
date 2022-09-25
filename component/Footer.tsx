@@ -11,9 +11,9 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 
-import AppStoreBadge from 'app-store-badge';
-import PlayStoreBadge from 'store-badge';
-
+// import {AppStoreBadge} from 'app-store-badge';
+// import {PlayStoreBadge} from 'store-badge';
+//
 
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
@@ -87,8 +87,8 @@ export  function FooterApp() {
 
                     <Stack align={'flex-start'}>
                         <ListHeader>Install App</ListHeader>
-                        <AppStoreBadge />
-                        <PlayStoreBadge />
+                        {/*<AppStoreBadge />*/}
+                        {/*<PlayStoreBadge />*/}
                     </Stack>
                 </SimpleGrid>
             </Container>
