@@ -12,6 +12,8 @@ export default {
     S_P:"S.P",
     month:"/month",
     review:"reviews",
+    _clinic:"Clinic",
+    active:"Active",
 
 
 }

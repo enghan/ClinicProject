@@ -6,6 +6,7 @@ import Clinics from "./clinics";
 import { Header } from '../../component/header';
 import Simple from "../../component/navBar";
 import {FooterApp} from "../../component/Footer";
+import Favorite from "./favorite";
 
 
 
@@ -28,7 +29,7 @@ export default function Home({dir}) {
 
                     <TabPanel key={1}><Offers dir={dir}></Offers> </TabPanel>
                     <TabPanel key={1}><Clinics dir={dir}></Clinics> </TabPanel>
-                    <TabPanel key={1}><Offers dir={dir}></Offers> </TabPanel>
+                    <TabPanel key={1}><Favorite dir={dir}></Favorite> </TabPanel>
 
                 </TabPanels>
             </Tabs>

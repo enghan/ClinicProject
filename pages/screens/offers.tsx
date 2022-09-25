@@ -17,7 +17,7 @@ export default function Offers({dir}) {
                     {offers.map(offer => (
                         <Cart_offers dir={dir} id={offer.id} image={offer.image} description={offer.description}
                                      price={offer.price} title={offer.title} ratingCount={offer.rating.count}
-                                     ratingRate={offer.rating.rate}></Cart_offers>
+                                     ratingRate={offer.rating.rate} Favorite={false}></Cart_offers>
                     ))}
 
                 </SimpleGrid>

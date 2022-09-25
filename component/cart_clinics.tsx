@@ -42,25 +42,6 @@ export function Cart_clinics({dir, id, image, title, price, description, ratingC
 
     }
 
-    let onFavoritePressed = (e) => {
-        offerState.Favorite == false ? setOfferState({
-            ...offerState,
-            Favorite: true
-
-        }) : setOfferState({
-            ...offerState,
-            Favorite: false
-
-        });
-    }
-    let onRatePressed = (e) => {
-        debugger
-        setOfferState({
-            ...offerState,
-            Rate: e.value
-
-        });
-    }
 
     return (
         // <VStack>
@@ -91,7 +72,7 @@ export function Cart_clinics({dir, id, image, title, price, description, ratingC
         //
         //     <Spacer/>
         // </VStack>
-        <Flex p={50} w="full" alignItems="center" justifyContent="center">
+        <Flex p={50} w="full"  alignItems="center" justifyContent="center">
             <Box
                 bg={useColorModeValue('white', 'gray.800')}
                 maxW="sm"
@@ -111,7 +92,7 @@ export function Cart_clinics({dir, id, image, title, price, description, ratingC
 
                     <Flex mt="1" justifyContent="space-between" alignContent="center">
                         <Box
-                            fontSize="2xl"
+                            fontSize="xl"
                             fontWeight="semibold"
                             as="h4"
                             lineHeight="tight"
@@ -124,8 +105,8 @@ export function Cart_clinics({dir, id, image, title, price, description, ratingC
                             placement={'top'}
                             color={'gray.800'}
                             fontSize={'1.2em'}>
-                            <chakra.a href={'#'} display={'flex'}>
-                                <Icon as={ArrowRightIcon} h={7} w={7} alignSelf={'center'} />
+                            <chakra.a href={'#'} display={'flex'} onClick={resetModal}>
+                                <Icon as={ArrowRightIcon} h={5} w={5} alignSelf={'center'} />
                             </chakra.a>
                         </Tooltip>
                     </Flex>

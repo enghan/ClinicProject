@@ -12,5 +12,7 @@ export default {
     S_P:"ل.س",
     month:"/شهر",
     review:"الآراء",
+    _clinic:"العيادة",
+    active:"فعال",
 
 }

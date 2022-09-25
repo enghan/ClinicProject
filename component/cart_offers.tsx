@@ -30,12 +30,13 @@ import {CheckIcon} from "@chakra-ui/icons";
 import Link from "next/link";
 import OfferDetail from "../pages/screens/offerDetail";
 import Rating from "./rating";
+import Favorite from "../pages/screens/favorite";
 
 
-export function Cart_offers({dir, id, image, title, price, description, ratingCount, ratingRate}) {
+export function Cart_offers({dir, id, image, title, price, description, ratingCount, ratingRate,Favorite}) {
     const [offerState, setOfferState] = useRecoilState(myOfferState);
     const {isOpen, onOpen, onClose} = useDisclosure()
-
+debugger
     let resetModal = (e) => {
         debugger
         setOfferState({
@@ -145,21 +146,24 @@ export function Cart_offers({dir, id, image, title, price, description, ratingCo
                         {title}
                     </Text>
                     <Stack direction={'row'} align={'center'} justify={'center'}>
-                        <Text fontSize={'xl'}>  <FormattedMessage id={"S_P"}/></Text>
-                        <Text fontSize={'6xl'} fontWeight={800}>
-                            {price}
+                        {/*<Text fontSize={'xl'}>  <FormattedMessage id={"S_P"}/></Text>*/}
+                        <Text fontWeight={800} fontSize={'xl'}>
+                            <FormattedMessage id={"S_P"}/>57
+                        </Text>
+                        <Text textDecoration={'line-through'} color={'gray.600'}>
+                            <FormattedMessage id={"S_P"}/>199
                         </Text>
 
                     </Stack>
-                    <IconButton
-                        colorScheme='brand.darkgray'
-                        aria-label='Call Sage'
-                        fontSize='32px'
-                        color={'brand.darkgray'}
-                        onClick={onFavoritePressed}
-                        pt={'20px'}
-                        icon={offerState.Favorite === true ? <FcLike/> : <IoHeartOutline/>}
-                    />
+                    {Favorite &&(<IconButton
+                    colorScheme='brand.darkgray'
+                    aria-label='Call Sage'
+                    fontSize='32px'
+                    color={'brand.darkgray'}
+                    onClick={onFavoritePressed}
+                    pt={'20px'}
+                    icon={offerState.Favorite === true ? <FcLike/> : <IoHeartOutline/>}
+                />)}
 
                 </Stack>
                 <Flex pb={'10px'} px={6} justifyContent="space-between" alignContent="center">

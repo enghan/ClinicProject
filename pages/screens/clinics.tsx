@@ -39,7 +39,7 @@ export default function Clinics({dir}) {
             </Center>
 
 
-                <SimpleGrid columns={3} spacingX='40px' dir={dir}>
+                <SimpleGrid columns={4} spacingX='10px' dir={dir}>
                     {offers.map(offer => (
                         <Cart_clinics dir={dir} id={offer.id} image={offer.image} description={offer.description}
                                       price={offer.price} title={offer.title} ratingCount={offer.rating.count}
